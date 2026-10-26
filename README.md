@@ -1,0 +1,1 @@
+Organizing some study notes for my personal interests. I am digitizing these from my handwritten notes periodically and managing them using Obsidian.
