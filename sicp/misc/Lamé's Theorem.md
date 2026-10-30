@@ -1,8 +1,5 @@
 SICP 1.2.5 (greatest common divisor). Handwritten proof, typed 2026-10-29.
 
->[!note]- Source page
-![[attachments/lame-theorem.jpg|500]]
-
 ## Setup
 - Assume $a \ge b$.
 - $F(1) = 1,\ F(2) = 2,\ F(k) = F(k-1) + F(k-2)$ for $k \ge 3$.
@@ -40,3 +37,6 @@ Since $r < b$, we must have $q \ge 1$, so $b = qr + r' \ge r + r'$. Therefore $b
 ## Consequence
 
 $F(k)$ grows like $\varphi^k$ with $\varphi = (1+\sqrt{5})/2$, so $b \ge F(k)$ gives $k = O(\log b)$. 
+
+>[!note]- Source page
+![[attachments/lame-theorem.jpg|500]]
