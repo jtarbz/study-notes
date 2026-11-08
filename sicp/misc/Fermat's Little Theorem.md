@@ -6,9 +6,9 @@ $$ \Rightarrow a^n \equiv a \pmod n $$
 
 $$ \Rightarrow a^{n-1} \equiv 1 \pmod n. $$
 
-**Proof:** Let $S = \{1, 2, \dots, n-1\}$. Let $S' = \{a, 2a, \dots, (n-1)a\}$.
+**Proof:** Let $S = \lbrace 1, 2, \dots, n-1 \rbrace$. Let $S' = \lbrace a, 2a, \dots, (n-1)a \rbrace$.
 
-These two sets must be equal modulo $n$ because no two elements in $S'$ are congruent modulo $n$, and none is congruent to $0$, as $n$ is prime, and both sets necessarily have $n-1$ elements.
+These two sets must be equivalent modulo $n$ because no two elements in $S'$ are congruent modulo $n$, and none is congruent to $0$, as $n$ is prime, and both sets necessarily have $n-1$ elements.
 
 Consequently, $\prod S \equiv \prod S' \pmod n$.
 

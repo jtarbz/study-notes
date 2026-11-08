@@ -61,7 +61,7 @@
 ## NP: Nondeterministic Polynomial Time
 
 - Notation: Let $\exists^p y$ denote "there exists $y$ of length $q(|x|)$," where $q$ is a polynomial that is understood.
-- Definition: $A \in \mathrm{NP}$ if there exists a set $B \in \mathrm{P}$ such that $A = \{x \mid \exists^p y : (x, y) \in B\}$.
+- Definition: $A \in \mathrm{NP}$ if there exists a set $B \in \mathrm{P}$ such that $A = \lbrace x \mid \exists^p y : (x, y) \in B \rbrace$.
 - Definition: $A \in \mathrm{NP}$ iff $A$ is accepted by a nondeterministic Turing machine that runs in polynomial time.
 - We might consider the following intuition:
     - If $x \in A$, then there is a **short** witness $y$ that can be used to verify $x \in A$ quickly.
@@ -83,7 +83,7 @@
 - Theorem: SAT is NP-Complete. (Cook-Levin theorem)
 - Notation: Let $\Sigma$ be an alphabet. Let $A, B \subseteq \Sigma^*$.
     1. $A \cdot B = {xy \mid x \in A \wedge y \in B}$
-    2. $A^0 = {\varepsilon}$ where $\varepsilon$ is the empty string.
+    2. $A^0 = \lbrace \varepsilon \rbrace$ where $\varepsilon$ is the empty string.
     3. $A^i = A \cdot A \cdot \ldots \cdot A$ ($i$ times)
     4. $A^* = A^0 \cup A^1 \cup A^2 \cup \ldots$
     5. $\overline{A} = \Sigma^* - A$
@@ -95,14 +95,14 @@
 
 - The complement of SAT is the set of all formulas with no satisfying assignment:
     
-    $$\text{CONTRA} = \{\varphi \mid \forall \vec{b} : \varphi(\vec{b}) = \text{FALSE}\}$$
+    $$\text{CONTRA} = \lbrace \varphi \mid \forall \vec{b} : \varphi(\vec{b}) = \text{FALSE} \rbrace$$
     
 - Clearly $\text{SAT} \in \mathrm{P} \iff \text{CONTRA} \in \mathrm{P}$.
     
 - CONTRA is probably not in NP, as verifying $\varphi \in \text{CONTRA}$ requires the truth table for $\varphi$.
     
     - So we define the class coNP, where CONTRA naturally lies.
-- Definition: $A \in \text{coNP}$ if there exists a set $B \in \mathrm{P}$ such that $A = {x \mid \forall^p y : (x, y) \in B}$.
+- Definition: $A \in \text{coNP}$ if there exists a set $B \in \mathrm{P}$ such that $A = \lbrace x \mid \forall^p y : (x, y) \in B \rbrace$.
     
     - Note there is an equivalent definition of NP not used in the text.
 - Intuition:
@@ -152,11 +152,11 @@
 ## Fixed-Parameter Tractability
 
 - Consider the following NP-Complete problems:
-    1. $\text{CLIQUE} = \{(G, k) \mid G \text{ has a clique of size } k\}$
-    2. $\text{VERTEX COVER} = \{(G, k) \mid G \text{ has a vertex cover of size } k\}$
+    1. $\text{CLIQUE} = \lbrace (G, k) \mid G \text{ has a clique of size } k \rbrace$
+    2. $\text{VERTEX COVER} = \lbrace (G, k) \mid G \text{ has a vertex cover of size } k \rbrace$
 - We might fix $k$ to describe the following (related) problems:
-    1. $\text{CLIQUE}_k = \{G \mid G \text{ has a clique of size } k\}$
-    2. $\text{VERTEX COVER}_k = \{G \mid G \text{ has a vertex cover of size } k\}$
+    1. $\text{CLIQUE}_k = \lbrace G \mid G \text{ has a clique of size } k \rbrace$
+    2. $\text{VERTEX COVER}_k = \lbrace G \mid G \text{ has a vertex cover of size } k \rbrace$
 - We can solve the fixed-$k$ versions in time $O(n^k)$, so they are in P.
     - But the vanilla versions are **not** in P because the exponent $k$ is a function of the input size.
 - $\text{VERTEX COVER}_k$ can be solved in time $O(2^k n)$, but $\text{CLIQUE}_k$ is believed to require time $n^{\Omega(k)}$.

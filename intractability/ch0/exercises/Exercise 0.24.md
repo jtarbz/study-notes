@@ -28,7 +28,7 @@ Step (1) requires only $O(\log q)$ steps using modular exponentiation by success
 
 We again describe a certificate and polynomial time verifier for $\overline{\mathrm{FACTORING}}$:
 
-$$ \overline{\mathrm{FACTORING}} = \{(N, a) \mid \text{There is no nontrivial factor of } N \text{ that is} \le a\} $$
+$$ \overline{\mathrm{FACTORING}} = \lbrace (N, a) \mid \text{There is no nontrivial factor of } N \text{ that is} \le a \rbrace $$
 
 The certificate is just the prime factorization of $N$, which must exist by UFT, plus a certificate showing that each factor is in PRIMES. Our verifier algorithm is as follows:
 
