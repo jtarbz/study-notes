@@ -61,7 +61,7 @@
 ## NP: Nondeterministic Polynomial Time
 
 - Notation: Let $\exists^p y$ denote "there exists $y$ of length $q(|x|)$," where $q$ is a polynomial that is understood.
-- Definition: $A \in \mathrm{NP}$ if there exists a set $B \in \mathrm{P}$ such that $A = {x \mid \exists^p y : (x, y) \in B}$.
+- Definition: $A \in \mathrm{NP}$ if there exists a set $B \in \mathrm{P}$ such that $A = \{x \mid \exists^p y : (x, y) \in B\}$.
 - Definition: $A \in \mathrm{NP}$ iff $A$ is accepted by a nondeterministic Turing machine that runs in polynomial time.
 - We might consider the following intuition:
     - If $x \in A$, then there is a **short** witness $y$ that can be used to verify $x \in A$ quickly.
@@ -95,7 +95,7 @@
 
 - The complement of SAT is the set of all formulas with no satisfying assignment:
     
-    $$\text{CONTRA} = {\varphi \mid \forall \vec{b} : \varphi(\vec{b}) = \text{FALSE}}$$
+    $$\text{CONTRA} = \{\varphi \mid \forall \vec{b} : \varphi(\vec{b}) = \text{FALSE}\}$$
     
 - Clearly $\text{SAT} \in \mathrm{P} \iff \text{CONTRA} \in \mathrm{P}$.
     
