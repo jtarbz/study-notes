@@ -1,5 +1,3 @@
-SICP 1.2.5 (greatest common divisor). Handwritten proof, typed 2026-10-29.
-
 ## Setup
 - Assume $a \ge b$.
 - $F(1) = 1,\ F(2) = 2,\ F(k) = F(k-1) + F(k-2)$ for $k \ge 3$.
