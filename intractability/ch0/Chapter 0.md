@@ -122,3 +122,62 @@
 
 > [!note]- Source page
 > ![[attachments/ch0-notes-4.jpg|500]]
+
+## Intermediate Problems
+
+- Definition: A problem is **NP-intermediate** if it is in NP but neither in P nor NP-Complete.
+- **Ladner's theorem:** If $\mathrm{P} \ne \mathrm{NP}$ then there exists an NP-intermediate problem.
+    - The problem used in the proof is rather contrived.
+- We conjecture a few natural problems to be NP-intermediate:
+    1. FACTORING. The decision problem version is just deciding if the input $N$ has a nontrivial factor $\le a$ for some $a$. We do not have a polynomial-time algorithm for FACTORING and there is no proof that it is NP-Complete.
+        - The last improvement in factoring algorithms was the number field sieve in '88.
+        - FACTORING is unlikely to be NP-Complete because it would imply $\mathrm{NP} = \mathrm{coNP}$.
+    2. DISCRETE LOG. Similar exposition to FACTORING.
+    3. GRAPH ISOMORPHISM. The fastest algorithm has running time $2^{(\log n)^c}$ for some constant $c$. It is believed that a quasipolynomial running time $2^{(\log n)^c}$ with $c > 1$ is the best one can do with current methods.
+        - If GRAPH ISOMORPHISM is NP-Complete then all problems in NP are solvable in quasipolynomial time $2^{(\log n)^c}$. This would violate ETH, but ETH is false (RIP), so that part isn't a big deal.
+        - If GRAPH ISOMORPHISM is NP-Complete then $\Sigma_2 = \Pi_2$ (Boppana et al.).
+    4. Minimum circuit size problem (MCSP). Given the truth table of a boolean function $f$ and an integer $s$, does $f$ have a circuit with at most $s$ logic gates?
+        - If $\text{MCSP} \in \mathrm{P}$ then there is no secure crypto system (Kabanets and Cai).
+
+## Exponential Time Hypothesis
+
+- Briefly, this hypothesis states that SAT requires exponential time. There is a more thorough formulation.
+    - Notably, this was shown to be false **very recently**.
+- The strong exponential time hypothesis states that $k$SAT gets harder as $k$ grows.
+- Need to examine results following from ETH/SETH in light of new research.
+
+> [!note]- Source page
+> ![[attachments/ch0-notes-5.jpg|500]]
+
+## Fixed-Parameter Tractability
+
+- Consider the following NP-Complete problems:
+    1. $\text{CLIQUE} = \{(G, k) \mid G \text{ has a clique of size } k\}$
+    2. $\text{VERTEX COVER} = \{(G, k) \mid G \text{ has a vertex cover of size } k\}$
+- We might fix $k$ to describe the following (related) problems:
+    1. $\text{CLIQUE}_k = \{G \mid G \text{ has a clique of size } k\}$
+    2. $\text{VERTEX COVER}_k = \{G \mid G \text{ has a vertex cover of size } k\}$
+- We can solve the fixed-$k$ versions in time $O(n^k)$, so they are in P.
+    - But the vanilla versions are **not** in P because the exponent $k$ is a function of the input size.
+- $\text{VERTEX COVER}_k$ can be solved in time $O(2^k n)$, but $\text{CLIQUE}_k$ is believed to require time $n^{\Omega(k)}$.
+
+## Complexity Classes That Use Randomization
+
+- Definition: A decision problem $A$ is in **randomized polynomial time (RP)** if there is a polynomial-time algorithm $M$ that can flip coins satisfying the following properties:
+    1. If $x \in A$, then the probability that $M(x)$ says $x \in A$ is $\ge 1/2$.
+    2. If $x \notin A$, then the probability that $M(x)$ says $x \notin A$ is $1$.
+- Some facts about RP:
+    1. G. Miller obtained a polynomial-time algorithm for PRIMES that depends on the extended Riemann hypothesis being true. Rabin modified the algorithm to be in RP without any hypothesis. The final algorithm is the **Miller-Rabin test**.
+    2. There are very few problems in RP that are not known to be in P. One such problem: Given a polynomial $f(x_1, \dots, x_n)$ and a prime $p$, is the polynomial identically zero over $\mathbb{Z}_p$?
+    3. There is reason to believe $\mathrm{P} = \mathrm{RP}$.
+- Definition: A set $A$ is in **bounded probabilistic polynomial time (BPP)** if some polytime $M$ can flip coins such that:
+    1. If $x \in A$, then the probability that $M(x)$ says $x \in A$ is $\ge 3/4$.
+    2. If $x \notin A$, then the probability that $M(x)$ says $x \notin A$ is $\ge 3/4$.
+- Some facts about BPP:
+    1. There are no (natural or unnatural) problems known to be in BPP but not known to be in RP.
+    2. There is reason to believe $\mathrm{P} = \mathrm{BPP}$ (based on the reasonable existence of a pseudorandom generator).
+    3. It is not known whether $\mathrm{BPP} \subseteq \mathrm{NP}$.
+    4. $\mathrm{BPP} \subseteq \Sigma_2 \cap \Pi_2$. Sipser's proof of this started the field of time-bounded Kolmogorov complexity.
+
+> [!note]- Source page
+> ![[attachments/ch0-notes-6.jpg|500]]
