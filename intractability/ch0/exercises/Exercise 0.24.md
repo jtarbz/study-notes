@@ -26,16 +26,16 @@ Step (1) requires only $O(\log q)$ steps using modular exponentiation by success
 
 **2. Use UFT and $\text{PRIMES} \in \mathrm{NP}$ to prove that $\overline{\text{FACTORING}} \in \mathrm{NP}$.**
 
-We again describe a certificate and polynomial time verifier for $\overline{\text{FACTORING}}$:
+We again describe a certificate and polynomial time verifier for $\overline{\mathrm{FACTORING}}$:
 
-$$ \overline{\text{FACTORING}} = {(N, a) \mid \text{There is no nontrivial factor of } N \text{ that is} \le a} $$
+$$ \overline{\mathrm{FACTORING}} = \{(N, a) \mid \text{There is no nontrivial factor of } N \text{ that is} \le a\} $$
 
 The certificate is just the prime factorization of $N$, which must exist by UFT, plus a certificate showing that each factor is in PRIMES. Our verifier algorithm is as follows:
 
 1. Verify each prime factor of $N$ is prime (by the previous solution).
 2. Verify that no prime factor of $N$ is less than or equal to $a$.
 
-Step (1) requires only polynomial time because the number of prime factors is linear in the input length and $\text{PRIMES} \in \mathrm{NP}$. Step (2) is just a single comparison for each factor. So $\overline{\text{FACTORING}} \in \mathrm{NP}$. $\blacksquare$
+Step (1) requires only polynomial time because the number of prime factors is linear in the input length and $\text{PRIMES} \in \mathrm{NP}$. Step (2) is just a single comparison for each factor. So $\overline{\mathrm{FACTORING}} \in \mathrm{NP}$. $\blacksquare$
 
 **3. Use $\text{FACTORING} \in \mathrm{NP} \cap \mathrm{coNP}$ to show that, if FACTORING is NP-Complete, then $\mathrm{NP} = \mathrm{coNP}$.**
 
