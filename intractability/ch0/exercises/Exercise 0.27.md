@@ -1,4 +1,4 @@
-**1.** Let $0 < \alpha < 1/2$. In the definition of RP, replace $1/2$ with $\alpha$ and call the resulting class $\mathrm{RP}_\alpha$. Show that $\mathrm{RP}_{1/2} = \mathrm{RP}_\alpha$.
+**1.** Let $0 < \alpha < 1/2$. In the definition of RP, replace $1/2$ with $\alpha$ and call the resulting class $\mathrm{RP}_{\alpha}$. Show that $\mathrm{RP}_{1/2} = \mathrm{RP}_{\alpha}$.
 
 We first show that any problem in $\mathrm{RP}_{1/2}$ can be converted to a problem in $\mathrm{RP}_\alpha$. Then we show the reverse direction to close the proof. Naturally, these must be polynomial time reductions for the proof to be correct.
 
